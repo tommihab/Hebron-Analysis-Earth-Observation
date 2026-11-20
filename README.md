@@ -15,6 +15,21 @@ The project focuses on the Hebron Governorate, including a detailed case study i
 - Investigate building changes using high-resolution orthophotos and pretrained deep-learning models.
 - Evaluate methodological limitations, classification uncertainties, and the potential of combining different Earth observation datasets.
 
+## Project Analyses
+
+### 1. Regional Land-Cover Change — Hebron
+
+Sentinel-2 and Dynamic World analysis of potential
+vegetation and built-up area changes (2020–2026).
+
+### 2. High-Resolution Orthophoto Analysis — Khirbet al-Fakheit
+
+Historical GeoMOLG orthophotos (2021–2023),
+geometric consistency assessment, and experimental
+deep-learning-based building segmentation.
+
+[View methodology, workflow and documentation](README_ORTHOPHOTO_ANALYSIS.md)
+
 ## Data and Methods
 
 The project uses Sentinel-2 Level-2A imagery, Google Earth Engine, historical orthophotos from GeoMOLG, and Python-based geospatial and machine-learning workflows.
