@@ -1,13 +1,5 @@
-# Vegetation analysis outputs
+# Vegetation change results (placeholders)
 
-Place small, shareable maps, figures, and tables here (for example `msavi2_baseline_2020-2022.png`, only if that is the confirmed baseline).
+No actual vegetation GeoTIFFs, figures, or area estimates were supplied here. The full vegetation script is also pending. Once available, upload appropriately sized map images / statistics and document output raster provenance and uncertainty.
 
-For each output, document:
-- Filename and description
-- Code version / Git commit and processing date
-- Source time periods and study-area version
-- CRS, pixel resolution, export settings, and units
-- Thresholds used and whether any postprocessing was applied
-- Validation data, uncertainty, and interpretation
-
-Large GeoTIFFs should normally remain in external storage; provide access links or download/reproduction instructions instead. No outputs are included in this starter template.
+Do not label detected MSAVI2 decreases as independently confirmed tree removal or olive grove loss. Record acquisition dates, weather/phenological limitations, SCL masking decisions, reference imagery and validation results.
