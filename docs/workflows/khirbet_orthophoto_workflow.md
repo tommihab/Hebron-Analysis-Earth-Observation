@@ -1,20 +1,8 @@
 # Workflow — Khirbet al-Fakheit orthophoto analysis
 
-The flowchart follows the provided presentation slide and is expanded using the uploaded Colab source.
+The flowchart follows the provided presentation slide
 
-```mermaid
-flowchart TD
-    A[GeoMOLG RGB orthophotos 2021 to 2023] --> B[Define 1 km square AOI in EPSG:28191]
-    B --> C[Download 2 x 2 tiles per year and mosaic]
-    C --> D[Compare imagery and resample 15 cm to 30 cm]
-    D --> E[HOTOSM DINOv3 Small plus UperNet inference]
-    E --> F[Sliding window 256 px / stride 192]
-    F --> G[Compare thresholds on test patches]
-    G --> H[Use threshold 0.30 for full AOI]
-    H --> I[Binary building masks for 2021, 2022 and 2023]
-    I --> J[Pixel-based building change: 2021-22, 2022-23, 2021-23]
-    J --> K[Area statistics and visual assessment]
-```
+(docs/figures/khirbet_workflow_slide.png)
 
 ## Processing stages
 
