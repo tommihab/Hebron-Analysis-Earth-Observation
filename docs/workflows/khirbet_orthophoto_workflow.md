@@ -2,7 +2,7 @@
 
 The flowchart follows the provided presentation slide
 
-![Workflow Orthophotos](docs/figures/khirbet_workflow_slide.png)
+![Workflow Orthophotos](Hebron-Analysis-Earth-Obeservation/docs/figures/khirbet_workflow_slide.png)
 
 ## Processing stages
 
