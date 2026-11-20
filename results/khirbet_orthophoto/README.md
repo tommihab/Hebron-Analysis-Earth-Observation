@@ -1,27 +1,38 @@
-# Khirbet al-Fakheit orthophoto analysis — results
+# Results — Khirbet al-Fakheit building analysis
 
-## Currently documented outputs
+**Interpretation status:** Preliminary, model-based, **not independently validated**. The submitted notebook does not include exported calculated CSVs or GeoTIFFs. Two final figure cells contain **hard-coded** area estimates, transcribed in the accompanying `statistics/` CSV files. They should be compared with newly calculated outputs before being treated as final.
 
-- 2021, 2022 and 2023 yearly GeoTIFF mosaics (6668 × 6668 px), held outside GitHub.
-- Three 1536 × 1536 px test patches, held outside GitHub unless small and distribution is permitted.
-- SIFT/RANSAC registration test, documented in `experiments/registration_sift_ransac.md`.
-- Exploratory pretrained-model workflow, documented in `experiments/hotosm_model_test.md`.
+## Notebook-reported building areas
 
-## What is **not** yet evidenced
+| Year | Detected building area (m²) |
+|---|---:|
+| 2021 | 2,845.382 |
+| 2022 | 3,097.191 |
+| 2023 | 2,888.564 |
 
-- Validated yearly building footprint datasets.
-- Verified building construction, demolition or footprint change counts/areas.
-- Independent accuracy assessment of segmentation outputs.
+Values from the final building-area bar-chart cell. These imply an increase from 2021 to 2022, followed by a decrease in 2023, but an apparent area trend may reflect segmentation sensitivity or spatial misalignment.
 
-## Add future outputs here
+## Notebook-reported 2021–2023 spatial change
 
-When available, add small figures under `figures/`, summary statistics under `statistics/`, and a concise interpretation with references to the code and source dates. Store large georeferenced masks externally and record their exact locations, CRS, pixel size and checksum.
+| Category | Reported area (m²) |
+|---|---:|
+| Stable building | 1,681.340 |
+| Potential building gain | 1,207.227 |
+| Potential building loss | 1,164.044 |
+| Net change (gain minus loss) | +43.183 |
 
-### Suggested figure set
+These numbers come from a **fixed list in the final chart cell**, not directly from the computed `df_change` table in the uploaded notebook. Numerical differences of a few thousandths of a square metre between totals appear to come from the precision used in the fixed numbers. Do not treat them as validation.
 
-1. Three-panel 2021/2022/2023 orthophoto comparison at the same spatial extent.
-2. Original versus attempted registration at stable structures.
-3. Original image and model probability map overlay (for each year).
-4. Verified building-change candidates with reference-image evidence and uncertainty.
+## Output manifest in code
 
-Images and statistics should not be added as results before they actually exist.
+- `Building_Probability_{2021,2022,2023}.tif`: predicted per-pixel building probabilities.
+- `Building_Mask_{2021,2022,2023}.tif`: binary segmentation masks, chosen threshold 0.30.
+- `Building_Change_2021-2022.tif`, `Building_Change_2022-2023.tif`, `Building_Change_2021-2023.tif`: stable background/building, gain/loss categories.
+- `Building_Change_Statistics.csv`: dynamically calculated change statistics (not provided with this package).
+- `Full_AOI_Building_Segmentation.png`, `Building_Area_Comparison.png`, `Building_Change_Comparison.png`, `Detailed_Building_Change_2021-2023.png` and the two manually specified bar charts.
+
+## Scientific limitations
+
+A 30 cm raster and probability threshold of 0.30 may be useful for exploring building signals, but binary pixel differences can overestimate actual building changes due to co-registration differences, shadows, illumination, seasonal appearance, roof changes, and model prediction errors. No manual reference sample, precision/recall or IoU evaluation is provided. The underlying orthophoto image redistribution conditions need checking.
+
+See [methodology](../../docs/methodology/khirbet_orthophoto_building_change.md) and [notebook review](../../code/notebooks/README.md).

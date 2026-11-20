@@ -1,0 +1,5 @@
+﻿dataset,year,provider,source_url,bands,nominal_resolution_m,analysis_resolution_m,analysis_crs,access_and_reuse_notes
+Orthophotos_WB_2021_15cm_tif_PG1923,2021,GeoMOLG,https://orthophotos.geomolg.ps/adaptor/rest/services/Orthophotos_WB_2021_15cm_tif_PG1923/MapServer,RGB,0.15,0.3,EPSG:28191,REST export; verify permitted redistribution
+Orthophotos_WB_2022_15cm_tif_PG1923_05,2022,GeoMOLG,https://orthophotos.geomolg.ps/adaptor/rest/services/Orthophotos_WB_2022_15cm_tif_PG1923_05/MapServer,RGB,0.15,0.3,EPSG:28191,REST export; verify permitted redistribution
+Orthophotos_WB_2023_15cm_jp2_PG1923_jp2,2023,GeoMOLG,https://orthophotos.geomolg.ps/adaptor/rest/services/Orthophotos_WB_2023_15cm_jp2_PG1923_jp2/MapServer,RGB,0.15,0.3,EPSG:28191,REST export; verify permitted redistribution
+DINOv3 Buildings Small pretrained ONNX,n/a,HOTOSM,https://huggingface.co/hotosm/dinov3s-buildings,RGB input,,0.3,n/a,"Check model card and pretrained weights license, record downloaded revision"
