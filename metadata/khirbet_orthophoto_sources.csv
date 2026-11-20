@@ -1,0 +1,4 @@
+dataset,provider,service_identifier,year_label,exact_acquisition_date,nominal_resolution_m,crs,annual_mosaic_px,tiles_per_year,endpoint_url,reuse_terms,status
+GeoMOLG 2021 orthophoto,GeoMOLG,Orthophotos_WB_2021_15cm_tif_PG1923/MapServer,2021,unverified,0.15,EPSG:28191,6668x6668,4,to_verify,to_verify,downloaded_and_mosaicked
+GeoMOLG 2022 orthophoto,GeoMOLG,Orthophotos_WB_2022_15cm_tif_PG1923_05/MapServer,2022,unverified,0.15,EPSG:28191,6668x6668,4,to_verify,to_verify,downloaded_and_mosaicked
+GeoMOLG 2023 orthophoto,GeoMOLG,Orthophotos_WB_2023_15cm_jp2_PG1923_jp2/MapServer,2023,unverified,0.15,EPSG:28191,6668x6668,4,to_verify,to_verify,downloaded_and_mosaicked
