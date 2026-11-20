@@ -15,11 +15,3 @@
 4. Built-up export settings in supplied script: GeoTIFF, 10 m, EPSG:32636, Google Drive folder `GEE_Hebron`. The script exports expansion, reduction, baseline probability, 2026 probability, and probability delta.
 5. Visualisation: ArcGIS Pro and ArcGIS Online. Final map exported as a PNG.
 
-## Items not supplied / not verified
-
-- The original raster outputs, underlying zonal-statistics tables, precise area denominator/mask definitions, and the GIS operations used to derive the **11.89 ha** overlap (including raster alignment and valid-data masking).
-- Independent reference-label accuracy assessment.
-- Full list of ArcGIS Pro layer styling choices or the project package.
-- Link/access check for the interactive ArcGIS Online experience when signed out.
-
-Do not describe the mapped numbers as externally validated measurements until the missing evidence is provided. Avoid assuming an ArcGIS `.aprx` file is portable: use a project package (`.ppkx`) or provide accessible data references if sharing the project.
