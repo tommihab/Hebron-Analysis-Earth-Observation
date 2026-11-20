@@ -1,2 +1,0 @@
-experiment_id,date,analysis,objective,method,main_settings,result,decision,evidence_path,limitations
-EXP-001,TO_FILL,Orthophoto registration,Test alignment improvement,SIFT + RANSAC,TO_FILL,No clear improvement demonstrated,Not applied,TO_FILL,Potential residual misalignment
