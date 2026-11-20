@@ -19,6 +19,16 @@ The project focuses on the Hebron Governorate, including a detailed case study i
 
 The project uses Sentinel-2 Level-2A imagery, Google Earth Engine, historical orthophotos from GeoMOLG, and Python-based geospatial and machine-learning workflows.
 
+## Interactive Results
+
+Explore the combined vegetation and built-up land-cover change analysis for the Hebron study area.
+
+**[View the interactive land-cover change map in ArcGIS Online](https://experience.arcgis.com/experience/b3d5ab018e5e46ba85facca4bc0b9f58)**
+
+The analysis compares a June–September 2020–2022 baseline with 2026 using Sentinel-2 imagery and Dynamic World built-up probabilities.
+
+For further information, see the [results documentation](results/hebron_landcover_change/arcgis_online.md).
+
 ## Repository Contents
 
 - `data/` — Input datasets, reference data, and processing outputs
