@@ -17,7 +17,7 @@
  *  3. Calculate vegetation indices, using MSAVI2 as the primary index.
  *  4. Establish the 2020–2022 baseline (mean and standard deviation).
  *  5. Identify stable vegetation using ESA WorldCover classes
- *     (trees, shrubs, cropland) and MSAVI2 thresholds:
+ *     and MSAVI2 thresholds:
  *       - Baseline mean >= 0.14
  *       - Baseline standard deviation <= 0.06
  *  6. Detect potential loss in 2026 using:
@@ -61,8 +61,6 @@ Map.centerObject(AOI, 10);
 Map.addLayer(SITES, {color: 'yellow'}, 'Hebron AOI');
 
 print('AOI area (km²)', AOI.area().divide(1e6));
-
-
 
 
 
@@ -310,9 +308,7 @@ Map.addLayer(SITES.style({color: 'ffffff', fillColor: '00000000'}), {}, 'Study s
 
 
 
-// =======================================================
 // 8. EXPORT - HEBRON VEGETATION CHANGE (2020-2026)
-// =======================================================
 
 // All raster exports use the same projection and resolution
 var exportCRS = 'EPSG:32636';  // UTM Zone 36N
@@ -320,9 +316,8 @@ var exportScale = 10;
 var exportFolder = 'GEE_Hebron';
 
 
-// =======================================================
-// 8.1 SENTINEL-2 RGB COMPOSITES
-// =======================================================
+
+// SENTINEL-2 RGB COMPOSITES
 
 // Prepare cloud-masked Sentinel-2 imagery
 function prepareRGB(img) {
@@ -396,9 +391,8 @@ Export.image.toDrive({
 });
 
 
-// =======================================================
-// 8.2 BASELINE VEGETATION MASK
-// =======================================================
+// BASELINE VEGETATION MASK
+
 
 // 1 = vegetation meeting baseline criteria
 // 0 = other pixels, including areas without valid data
@@ -421,10 +415,7 @@ Export.image.toDrive({
   fileFormat: 'GeoTIFF'
 });
 
-
-// =======================================================
-// 8.3 DETECTED VEGETATION LOSS
-// =======================================================
+// DETECTED VEGETATION LOSS
 
 // 1 = potential vegetation loss
 // 0 = no detected loss or insufficient valid data
@@ -447,10 +438,7 @@ Export.image.toDrive({
   fileFormat: 'GeoTIFF'
 });
 
-
-// =======================================================
 // 8.4 MSAVI2 CHANGE RASTER
-// =======================================================
 
 // Difference between 2026 and baseline mean
 // Negative values = declining vegetation greenness
@@ -474,9 +462,7 @@ Export.image.toDrive({
 });
 
 
-// =======================================================
-// 8.5 AOI BOUNDARY
-// =======================================================
+// AOI BOUNDARY
 
 // EXPORT 6: Hebron study area polygon
 Export.table.toDrive({
@@ -487,9 +473,7 @@ Export.table.toDrive({
 });
 
 
-// =======================================================
-// 8.6 VEGETATION LOSS STATISTICS
-// =======================================================
+// VEGETATION LOSS STATISTICS
 
 // Calculate areas using the existing function
 var areaStats = siteAreas(main);
