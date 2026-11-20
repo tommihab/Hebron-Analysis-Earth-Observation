@@ -1,0 +1,5 @@
+change_type,area_ha,percentage_of_baseline_category,baseline_category,percent_of_detected_vegetation_loss,percent_of_detected_builtup_expansion,baseline_period,comparison_period,status,source
+potential_vegetation_loss,457.23,4.96,baseline vegetation,,,June-September 2020-2022,June-September 2026,reported on map; not independently verified,Hebron_LandCover_Change_2026.png
+potential_builtup_expansion,418.91,2.71,baseline built-up area,,,June-September 2020-2022,June-September 2026,reported on map; not independently verified,Hebron_LandCover_Change_2026.png
+potential_builtup_reduction,7.47,0.05,baseline built-up area,,,June-September 2020-2022,June-September 2026,reported on map; not independently verified,Hebron_LandCover_Change_2026.png
+overlap_potential_vegetation_loss_and_builtup_expansion,11.89,,not applicable - intersection of two detected change categories,2.60,2.84,June-September 2020-2022,June-September 2026,reported in supplementary summary table; not independently verified,overlap_summary_source.png
