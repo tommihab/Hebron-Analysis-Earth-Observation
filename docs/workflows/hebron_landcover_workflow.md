@@ -4,51 +4,27 @@ The project uses two **distinct** workflows to investigate change in the same br
 
 ## A. Built-up probability change (executable script provided)
 
-```text
-Hebron AOI (Earth Engine asset)
-          +
-Dynamic World V1 'built' probabilities (10 m)
-          |
-June–September annual means: 2020 / 2021 / 2022 / 2026
-          |
-Baseline = mean of 2020, 2021 and 2022 annual means
-          |
-Probability difference = 2026 − baseline
-          |
-Expansion: baseline < 0.20 AND 2026 > 0.50
-Reduction: baseline > 0.50 AND 2026 < 0.20
-          |
-Keep connected candidate groups ≥ 5 pixels
-          |
-Export GeoTIFFs: probability baseline, 2026, delta,
-                  expansion and reduction
-          |
-Independent interpretation and validation (PENDING)
-```
+1. Data acquisition and processing
+- Definition AOI
+- Use of Sentinel-2 L2A, Dynamic World V1 and ESA WorldCover 2020 in Google Earth Engine.
+- Cloud masking and generation of seasonal composites (June–September).
+- Comparison of the 2020–2022 baseline with 2026/2025-2026
+2. Vegetation and loss detection
+- Calculation of Modified Soil-Adjusted Vegetation Index (MSAVI2). 
+- Identification of stable vegetation
+- Identification of vegetation loss
+3. Built up area change detection
+- Calculation of mean Dynamic World built up probabilities
+- Threshold based change detection:
+→ Expansion: increase from <20% to >50%
+4. Spatial and statistical analysis
+- Calculation of absolute and relative area change
+- Classification of vegetation change
+5. Geovisualisation
+- Creation of static Map in ArcGIS Pro
+- Development of interactive Swipe map in ArcGIS online
+- Creation of static Classification Map in QGIS
 
-## B. Vegetation change (method summary provided; script pending)
-
-```text
-Hebron AOI + Sentinel-2 L2A + ESA WorldCover 2020
-          |
-SCL cloud masking
-          |
-June–September annual composites, 2020–2022 and 2026
-          |
-MSAVI2; baseline mean and standard deviation
-          |
-WorldCover vegetation candidate mask + baseline MSAVI2 filters
-(mean ≥ 0.14; SD ≤ 0.06)
-          |
-2026 decline: MSAVI2 delta < −0.05; z-score < −2.5
-(SD floor 0.02)
-          |
-Remove connected groups < 5 pixels
-          |
-10 m EPSG:32636 output; ArcGIS Pro visualisation
-          |
-Independent interpretation and validation (PENDING)
-```
 
 ## How to link the two analyses
 
