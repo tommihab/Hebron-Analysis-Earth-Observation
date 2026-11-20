@@ -1,5 +1,5 @@
 
-// ========================================================
+// 
 // BUILT-UP AREA CHANGE DETECTION - HEBRON (2020-2026)
 // Google Earth Engine - JavaScript
 //
@@ -7,10 +7,9 @@
 // Baseline: June-September 2020, 2021, 2022
 // Comparison: June-September 2026
 // Resolution: 10 m
-// ========================================================
+// 
 
-
-// ===================== 1. CONFIG ========================
+// CONFIG
 
 // Load the original Hebron AOI
 var SITES = ee.FeatureCollection(
@@ -36,7 +35,7 @@ var EXPORT_SCALE = 10;
 var EXPORT_FOLDER = 'GEE_Hebron';
 
 
-// ===================== 2. DATA ==========================
+// DATA
 
 // Dynamic World land-cover probabilities
 var DW = ee.ImageCollection('GOOGLE/DYNAMICWORLD/V1')
@@ -44,7 +43,7 @@ var DW = ee.ImageCollection('GOOGLE/DYNAMICWORLD/V1')
   .select('built');
 
 
-// ===================== 3. COMPOSITES ====================
+//  COMPOSITES
 
 // Create dry-season mean probability for one year
 function dryBuilt(year) {
@@ -74,7 +73,7 @@ var builtAfter = dryBuilt(POST_YEAR)
   .rename('built_2026');
 
 
-// ===================== 4. CHANGE DETECTION ==============
+// CHANGE DETECTION
 
 // Change in built-up probability
 var builtDelta = builtAfter
@@ -99,7 +98,7 @@ var valid = builtBefore.mask()
   .and(builtAfter.mask());
   
 
-// ================= BUILT-UP REDUCTION =================
+// BUILT-UP REDUCTIO
 
 // Areas changing from high to low built-up probability
 var lostBuilt = builtBefore.gt(AFTER_MIN)
@@ -116,7 +115,7 @@ var lostBuiltClean = lostBuilt
 
 
 
-// ===================== 5. MAP ===========================
+// 5. MAP
 
 Map.centerObject(AOI, 10);
 Map.setOptions('SATELLITE');
@@ -180,7 +179,7 @@ Map.addLayer(
 );
 
 
-// ===================== 6. EXPORT ========================
+// EXPORT
 
 // 1 = potential new built-up area
 // 0 = no detected expansion
@@ -243,7 +242,7 @@ Export.image.toDrive({
 print('Built-up analysis ready. Check map and Tasks tab.');
 
 
-// ================= EXPORT BUILT-UP REDUCTION =================
+// EXPORT BUILT-UP REDUCTION
 
 // 1 = potential built-up reduction
 // 0 = no detected reduction
