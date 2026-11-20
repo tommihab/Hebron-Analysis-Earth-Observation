@@ -42,7 +42,3 @@ If there is an existing `arcgis_online.md` in this folder, retain it; the above 
 ## Limitations
 
 These are model/threshold detections, not confirmed physical changes. Possible errors include seasonal differences, cloud/shadow residuals, misclassification of bare surfaces as built-up land, mixed 10 m pixels and sensitivity to thresholds. The vegetation signal cannot specifically identify olive-grove removal; built-probability change does not alone confirm construction or demolition. The map is descriptive and does not establish causes or causal relationships between classes. No independent accuracy assessment or ground verification has yet been provided.
-
-## Reproduction and file availability
-
-The map figure and summary statistics are included in GitHub. The input AOI, original Google Earth Engine outputs and ArcGIS Pro project should be made accessible separately, where licensing and file size permit. Ensure other contributors have access to the Earth Engine AOI asset (`projects/geohum-action/assets/hebron_aoi`) or provide an equivalent AOI GeoJSON. Original exports, zonal-statistics procedures, and the calculation method for the spatial overlap are still needed to fully reproduce the mapped areas and percentages.
