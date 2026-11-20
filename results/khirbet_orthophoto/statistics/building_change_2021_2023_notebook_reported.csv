@@ -1,5 +1,0 @@
-﻿period,category,area_m2,source,verification_status
-2021-2023,Stable building,1681.34,Hard-coded list in uploaded notebook cell 19,Not independently verified
-2021-2023,Potential building gain,1207.227,Hard-coded list in uploaded notebook cell 19,Not independently verified
-2021-2023,Potential building loss,1164.044,Hard-coded list in uploaded notebook cell 19,Not independently verified
-2021-2023,Net change,43.183,Calculated from hard-coded cell 19 values,Derived from unverified notebook figures
