@@ -16,7 +16,6 @@ The flowchart follows the provided presentation slide
 
 ## Known unimplemented/missing steps
 
-- The supplied notebook has two missing helper function definitions needed for the inference cell.
 - Model preprocessing and output postprocessing need verification.
 - No independently validated building change accuracy assessment is supplied.
 - A SIFT/RANSAC image-registration experiment was previously discussed but is **not** in the uploaded notebook.
