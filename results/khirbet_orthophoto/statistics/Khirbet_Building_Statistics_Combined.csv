@@ -1,0 +1,7 @@
+﻿Record type,Year,Period,Building pixels,Building coverage (%),Building area (m²),Runtime (min),Stable building (m²),Building gain (m²),Building loss (m²),Gross change (m²),Net change (m²),Relative change (%)
+Annual building area,2021,,36334,0.327,3268.752,6.173,,,,,,
+Annual building area,2022,,39377,0.354,3542.513,6.145,,,,,,
+Annual building area,2023,,33590,0.302,3021.891,6.339,,,,,,
+Building change,,2021-2022,,,,,2086.625,1455.888,1182.127,2638.015,273.76,8.375
+Building change,,2022-2023,,,,,2302.629,719.262,1239.884,1959.146,-520.622,-14.696
+Building change,,2021-2023,,,,,1938.455,1083.437,1330.298,2413.734,-246.861,-7.552
