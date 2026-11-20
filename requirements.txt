@@ -1,0 +1,2 @@
+# Add the verified Python dependencies and versions used by your notebooks.
+# Example format (replace with actual tested versions): package==X.Y.Z
