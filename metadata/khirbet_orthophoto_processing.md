@@ -28,7 +28,3 @@
 The input and output tensor contract of the model is not verified in the submitted notebook. Missing inference helper definitions prevent a clean reproducible run in that form. See `code/notebooks/README.md`.
 
 The notebook does **not** contain the reported SIFT/RANSAC registration test. Its common grid check confirms matching raster geometry, not true image-to-image co-registration of building pixels.
-
-## Provenance of final figures
-
-The final two chart cells contain manually entered area values, not CSV import nor a direct reference to the computed DataFrames. Transcribed values should remain flagged as unverified until a full rerun reproduces them and the underlying GeoTIFFs or computed CSV outputs are retained.
