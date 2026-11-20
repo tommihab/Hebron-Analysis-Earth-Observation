@@ -53,7 +53,7 @@ For further information, see the [results documentation](results/hebron_landcove
 - `results/` — Maps, figures, tables, and validation outputs
 - `gis_projects/` — GIS project files
 - `docs/` — Methodology, interpretation, findings, and limitations
-- `presentation/` — Reports and presentations
+- `presentation slides/` — Reports and presentations
 
 ## Reproducibility
 
