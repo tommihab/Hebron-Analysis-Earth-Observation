@@ -94,7 +94,7 @@ Accuracy check (80 points):
 3. The raw built-up difference in the camp (−11,306 m², −8.2 %) is mostly not confirmed by the v2 filters. The confirmed change (new 1,498 m² minus lost 1,372 m²) is almost balanced. Report the confirmed figures.
 4. Built-up share in the camp (48.4 %) is high compared with the 20–35 % range noted in the notebook. Bright limestone, levelled ground or other classes may still be included.
 5. Parallax (different viewing angles), remaining shadows, and the different native resolutions (1.02 m vs 0.51 m) can still cause errors.
-6. The accuracy check was done by visual inspection by [names], on 80 points, and is subjective.
+6. The accuracy check was done by visual inspection by Luyao, on 80 points, and is subjective.
 7. The 10 m sensor test is a simple aggregation of the 1 m map. About 52 % of new area lies in cells that are at least half new, and 64 % of the 166 new patches are smaller than one 10 m cell (median 65 m²). This indicates magnitude only.
 8. Imagery shows that something changed, not who changed it or why.
 
