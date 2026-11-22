@@ -38,7 +38,6 @@ The project uses Sentinel-2 Level-2A imagery, Google Earth Engine, historical or
 
 - `data/` — Input datasets, reference data, and processing outputs
 - `code/` — Analysis scripts and notebooks
-- `experiments/` — Methodological tests and experimental results
 - `results/` — Maps, figures, tables, and validation outputs
 - `gis_projects/` — GIS project files
 - `docs/` — Methodology, interpretation, findings, and limitations
