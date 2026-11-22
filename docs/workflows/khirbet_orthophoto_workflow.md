@@ -14,10 +14,3 @@ The flowchart follows the provided presentation slide
 6. **Change detection:** Classify transitions between predicted binary building masks as stable, gain, or loss over each of three comparison periods.
 7. **Statistics and visualization:** Calculate areas from pixel counts and georeferenced pixel area; create overview maps, zoom images and charts.
 
-## Known unimplemented/missing steps
-
-- Model preprocessing and output postprocessing need verification.
-- No independently validated building change accuracy assessment is supplied.
-- A SIFT/RANSAC image-registration experiment was previously discussed but is **not** in the uploaded notebook.
-
-See [methodology](../methodology/khirbet_orthophoto_building_change.md) and [notebook review](../../code/notebooks/README.md).
