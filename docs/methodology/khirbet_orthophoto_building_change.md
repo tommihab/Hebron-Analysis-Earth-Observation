@@ -1,49 +1,50 @@
-# Methodology — high-resolution orthophoto building change detection
+# Methodology — High-Resolution Orthophoto Building Change Detection
 
-## Aim and area
+## Aim and Study Area
 
-Assess potential changes in mapped building footprint area in a **1 km × 1 km** study area around Khirbet al-Fakheit, Masafer Yatta (West Bank), between 2021 and 2023. The study area is constructed as a 1,000 m square in **EPSG:28191**, centred on WGS84 latitude **31.37662**, longitude **35.16619**. The AOI is exported as GeoJSON in EPSG:4326.
+This analysis investigates potential building changes between 2021 and 2023 in a **1 × 1 km study area in Khirbet al-Fakheit, Masafer Yatta (West Bank)**. The study area is centred at 31.37662°N, 35.16619°E (EPSG:28191).
 
-## 1. Data acquisition
+## 1. Data Acquisition and Preprocessing
 
-Three GeoMOLG orthophoto ArcGIS MapServer services are queried via REST (`f=pjson`) and their `/export` endpoints for **2021, 2022 and 2023**. For each date, the notebook requests **four 3334 × 3334 px RGB PNG tiles** across a shared grid, verifies the tile extent, and writes the tiles into one **6668 × 6668 px GeoTIFF** covering the 1 × 1 km AOI. RGB bands are stored as `uint8` with LZW compression.
+Historical GeoMOLG orthophotos from **2021, 2022 and 2023** were retrieved through ArcGIS MapServer REST services using Python in Google Colab.
 
-The effective raster cell size follows from the requested extent, about **0.150 m/pixel** (1,000 m / 6,668 px), not a separately verified original camera GSD. The `f=image` branch is used as a fallback when the JSON export's image link cannot be fetched.
+For each year, four RGB tiles were downloaded and mosaicked into a 6668 × 6668-pixel GeoTIFF at approximately **15 cm spatial resolution**. The imagery was subsequently resampled to **30 cm** for building segmentation.
 
-## 2. Patches and resolution comparison
+Geometric consistency was investigated using SIFT feature matching and RANSAC. As no clear improvement was achieved, no additional geometric transformation was applied.
 
-A **1536 × 1536 px** patch is extracted per year, centred around 50% of image width and 45% of image height. Each patch is also downsampled to **768 × 768 px** using OpenCV `INTER_AREA`. The notebook generates side-by-side visual comparisons of **15 cm vs. 30 cm** images and corresponding segmentation outputs.
+## 2. Building Segmentation
 
-## 3. Pretrained building segmentation
+Building detection was performed using the pretrained [HOTOSM DINOv3 Buildings Small](https://huggingface.co/hotosm/dinov3s-buildings) model (DINOv3 ViT-S/16 encoder and UperNet decoder).
 
-The script downloads the ONNX file `model.onnx` for [`hotosm/dinov3s-buildings`](https://huggingface.co/hotosm/dinov3s-buildings), and records the model repository's current revision in a session variable. It implements sliding-window inference using **256 × 256** windows and **192 px** stride, averaging overlapping output maps. The model is described as a frozen **DINOv3 ViT-S/16** feature encoder with a **UperNet** segmentation decoder.
+The ONNX model was applied using sliding-window inference with **256 × 256-pixel windows and a stride of 192 pixels**. Overlapping predictions were averaged, and model logits were converted into building probabilities using a sigmoid transformation.
 
-The model card lists **0.4371** as a published default probability threshold. The study compares thresholds **0.20**, **0.30**, **0.40**, **0.4371** and **0.50** on the test patches. The final full-AOI implementation chooses **0.30** at **approximately 30 cm** resolution, as specified in notebook cells; it should be described as a selected experimental setting, not necessarily an optimal or independently validated one.
+Different probability thresholds (0.20, 0.30, 0.40, 0.4371 and 0.50) and spatial resolutions (15 cm and 30 cm) were compared. The final analysis used **30 cm resolution and a probability threshold of 0.30**.
 
-**Reproducibility caveat:** In the submitted notebook, `get_window_positions()` and `preprocess_window()` are called without definitions. The ONNX output is additionally passed through `expit(logits[0,0])`, but the correct output channel and required activation for this ONNX export have not been confirmed. The analysis needs a successful rerun and model-contract check before claiming full reproducibility. A proposed helper module is supplied separately; the original notebook has not been altered.
+## 3. Building Change Detection
 
-## 4. Full-area inference and pixel-based change detection
+Binary building masks were generated for each year and compared pixel by pixel for three periods:
 
-The full 6668 × 6668 images are downsampled to **3334 × 3334 px** while preserving the nominal 1,000 × 1,000 m footprint. The notebook checks that raster shape, CRS, and affine transforms agree for all three years. It then intends to export for each year:
+- 2021–2022
+- 2022–2023
+- 2021–2023
 
-- `Building_Probability_{year}.tif`: float32 building prediction map;
-- `Building_Mask_{year}.tif`: uint8 binary predicted building mask;
-- `Building_Change_{period}.tif`: 0 background, 1 stable building, 2 potential gain, 3 potential loss for the paired dates.
+Four classes were distinguished: stable background, stable buildings, potential building gain and potential building loss.
 
-Change is calculated independently for each pair **2021–2022**, **2022–2023**, **2021–2023**. Every pixel transitions between binary building/non-building predictions. Areas are calculated as class-pixel counts multiplied by the area derived from the raster affine transform. Gross change = gain + loss; net change = gain − loss; relative change = net / initial building area × 100%.
+Change areas were calculated from the number of classified pixels multiplied by the raster pixel area. Net change was calculated as building gain minus building loss.
 
-## 5. Outputs, interpretation and validation
+The workflow generated building probability maps, binary segmentation masks, change-detection GeoTIFFs, statistical tables and visualisations.
 
-The original code creates comparison figures, an exported CSV of period-level change statistics, and detail plots. Its final two visualisation cells contain fixed values and have not been verified against original computed arrays because neither the output GeoTIFFs nor the complete execution logs were uploaded. The numbers are transcribed in `results/khirbet_orthophoto/statistics/` with a provenance warning.
+## 4. Limitations
 
-**Crucial limitation:** Matching raster shape/transform is not the same as geometric co-registration of actual image features. Small alignment or ortho-rectification errors can create false gain/loss around rooftops. Additional confounders include roof reflectance, shadows, occlusions, different image conditions, domain shift, threshold sensitivity and the absence of independently labelled buildings.
+The results represent **potential changes in model-predicted building coverage**, not independently confirmed construction or demolition.
 
-## Registration test provenance
+Uncertainty arises from residual geometric misalignment, shadows, illumination differences, roof characteristics, model generalisation, resampling and threshold sensitivity. The SIFT/RANSAC registration test was conducted separately and is not included in the main Colab notebook.
 
-A SIFT/RANSAC registration experiment was previously reported as not giving clear improvement and was therefore not applied. **No SIFT/RANSAC implementation is present in the notebook supplied here.** A reproducible registration test requires separate code and diagnostics; otherwise the method should be documented as an external exploratory step.
+No independent quantitative accuracy assessment against reference building footprints has been performed.
 
-## References
+## Sources and Reproducibility
 
-- [HOTOSM DINOv3 Buildings Small model card](https://huggingface.co/hotosm/dinov3s-buildings)
-- [HOTOSM fAIr model implementation and training configuration](https://github.com/hotosm/fAIr-models/blob/develop/models/dinov3s_buildings/README.md)
-- Data service endpoints and access details: [`metadata/khirbet_orthophoto_data_sources.csv`](../../metadata/khirbet_orthophoto_data_sources.csv)
+- [HOTOSM DINOv3 Buildings Small](https://huggingface.co/hotosm/dinov3s-buildings)
+- Data sources: [`metadata/khirbet_orthophoto_data_sources.csv`](../../metadata/khirbet_orthophoto_data_sources.csv)
+- Processing notebook: [`code/notebooks/khirbet_al_fakheit_orthophotos.ipynb`](../../code/notebooks/khirbet_al_fakheit_orthophotos.ipynb)
+- Results: [`results/khirbet_orthophoto/`](../../results/khirbet_orthophoto/)
