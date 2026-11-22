@@ -37,7 +37,6 @@ The project uses Sentinel-2 Level-2A imagery, Google Earth Engine, historical or
 ## Repository Contents
 
 - `data/` — Input datasets, reference data, and processing outputs
-- `metadata/` — Data provenance and processing documentation
 - `code/` — Analysis scripts and notebooks
 - `experiments/` — Methodological tests and experimental results
 - `results/` — Maps, figures, tables, and validation outputs
