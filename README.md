@@ -42,13 +42,8 @@ deep-learning-based building segmentation.
 Historical GeoMOLG orthophotos (2021–2023),
 GeoAI segmentation (QGIS plug-in) and machine learning (Random forest) Land Cover classification.
 
-[View methodology, workflow and documeation](README_ORTHOPHOTO_ANALYSIS_WADI_SAIR.md)
+[View methodology, workflow and documentation](README_ORTHOPHOTO_ANALYSIS_WADI_SAIR.md)
 
-
-### 4. Analyses Ashley
-
-
-### 5. Analyses Axcel
 
 ## Data and Methods
 
