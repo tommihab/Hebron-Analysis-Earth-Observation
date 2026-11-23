@@ -2,7 +2,8 @@
 
 ## QGIS Project
 
-**File:** `olive_loss_west_bank.qgz`
+**Files:** `olive_loss_west_bank.qgz`
+
 
 ## Contents
 
