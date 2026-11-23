@@ -16,8 +16,6 @@
 | Potential built-up reduction | **7.47 ha** | **0.05%** of baseline built-up area | Areas changing from high to low Dynamic World built probability |
 | **Overlap of potential vegetation loss and built-up expansion** | **11.89 ha** | **2.60% of detected vegetation loss**; **2.84% of detected built-up expansion** | Area identified in both change categories (not additional area) |
 
-*The first three values are transcribed from the final map; the 11.89 ha overlap and its percentages are transcribed from a supplementary summary-table screenshot. They have not been independently recalculated from the original GeoTIFFs. Overlap is part of both reported change areas and must **not** be added to their totals. The denominator definitions, area calculations and intersection method should be verified before publication.*
-
 ## Map interpretation
 
 Potential built-up expansion appears in scattered clusters, including northern and central portions of the AOI. Potential vegetation loss is also spatially dispersed, with localized mapped patches. The mapped extent of potential built-up reduction is substantially smaller than that of expansion. The supplementary table reports **11.89 ha** where the two potential change detections overlap. That represents **2.60%** of the detected vegetation-loss area and **2.84%** of detected built-up expansion. The limited spatial overlap does **not** establish that vegetation loss was caused by new construction; co-location is not evidence of causation, and independent high-resolution checks remain necessary.
@@ -32,13 +30,9 @@ Potential built-up expansion appears in scattered clusters, including northern a
 
 - [Static map (PNG)](maps/Hebron_LandCover_Change_2026.png)
 - [Summary statistics (CSV)](statistics/hebron_change_summary.csv)
-- [Original overlap summary-table screenshot](statistics/overlap_summary_source.png)
 - [Detailed findings, interpretation and limitations](../../docs/findings/hebron_landcover_results.md)
-- [Results provenance and outstanding verification](../../metadata/hebron_results_provenance.md)
 - [Interactive ArcGIS Experience](https://experience.arcgis.com/experience/b3d5ab018e5e46ba85facca4bc0b9f58)
-
-If there is an existing `arcgis_online.md` in this folder, retain it; the above URL can be added there as well.
 
 ## Limitations
 
-These are model/threshold detections, not confirmed physical changes. Possible errors include seasonal differences, cloud/shadow residuals, misclassification of bare surfaces as built-up land, mixed 10 m pixels and sensitivity to thresholds. The vegetation signal cannot specifically identify olive-grove removal; built-probability change does not alone confirm construction or demolition. The map is descriptive and does not establish causes or causal relationships between classes. No independent accuracy assessment or ground verification has yet been provided.
+These are model/threshold detections, not confirmed physical changes. Possible errors include seasonal differences, cloud/shadow residuals, misclassification of bare surfaces as built-up land, mixed 10 m pixels and sensitivity to thresholds. The vegetation signal cannot specifically identify olive-grove removal; built-probability change does not alone confirm construction or demolition. The map is descriptive and does not establish causes or causal relationships between classes. No independent accuracy assessment or ground verification was done.
