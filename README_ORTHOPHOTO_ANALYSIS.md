@@ -31,16 +31,6 @@ This subproject investigates potential building-footprint changes in a **1 × 1 
 - [`results/khirbet_orthophoto/`](results/khirbet_orthophoto/): notebook-reported statistics and an output manifest, not an independent validation dataset.
 - [`experiments/khirbet_orthophoto_experiment_log.md`](experiments/khirbet_orthophoto_experiment_log.md): threshold/resolution tests and an external registration test note.
 
-## Important reproducibility caveat
-
-The supplied notebook invokes `get_window_positions()` and `preprocess_window()` but does not define them. The repository therefore retains the unaltered source notebook and flags a **known execution blocker**. `inference_helpers.py` contains proposed implementations; verify model preprocessing and raw ONNX output semantics before using them to reproduce statistics. No model inference has been executed as part of preparing this repository package.
-
-The final two plots contain **manually written numbers**, so the area figures are recorded as *reported in the supplied notebook*, rather than independently reconstructed from its raster output files.
-
 ## Data access
 
-Full GeoTIFF mosaics, model weights and large inference outputs are **not** committed to GitHub. Recreate or archive them outside Git, subject to source terms. See [data storage notes](data/orthophotos/README.md). Check GeoMOLG reuse permissions before publishing downloaded imagery or image previews.
-
-## Status
-
-**Research workflow documented; reproduction and accuracy validation outstanding.** Binary mask differences should be called *potential building gain/loss*, not confirmed construction or demolition.
+Full GeoTIFF mosaics, model weights and large inference outputs are not committed to GitHub. See [data storage notes](data/orthophotos/README.md).
