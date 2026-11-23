@@ -17,10 +17,13 @@ The project focuses on the Hebron Governorate, including a detailed case study i
 
 ## Project Analyses
 
-### 1. Regional Land-Cover Change — Hebron
+### 1. Regional Land-Cover Change and classification — Hebron
 
 Sentinel-2 and Dynamic World analysis of potential
 vegetation and built-up area changes (2020–2026).
+A notebook and associated datasets have been generated as part of 
+the Olive Loss classification analysis. 
+These are available in the **Code** and **Data** sections, respectively.
 
 ### 2. High-Resolution Orthophoto Analysis — Khirbet al-Fakheit
 
