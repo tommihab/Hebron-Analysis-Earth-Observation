@@ -38,9 +38,15 @@ deep-learning-based building segmentation.
 
 [View methodology, workflow and documentation](README_ORTHOPHOTO_ANALYSIS.md)
 
-### 3. Analyses Ashley
+### 3. High-Resolution Orthophoto Analysis — Wadi Sa'ir
+Historical GeoMOLG orthophotos (2021–2023),
+GeoAI segmentation (QGIS plug-in) and machine learning (Random forest) Land Cover classification.
 
-### 4. Analyses Rocio
+[View methodology, workflow and documentation]()
+
+
+### 4. Analyses Ashley
+
 
 ### 5. Analyses Axcel
 
