@@ -29,8 +29,7 @@ This subproject investigates potential building-footprint changes in a **1 × 1 
 - [`metadata/khirbet_orthophoto_data_sources.csv`](metadata/khirbet_orthophoto_data_sources.csv): exact input service URLs and key metadata.
 - [`metadata/khirbet_orthophoto_processing.md`](metadata/khirbet_orthophoto_processing.md): processing parameters and provenance.
 - [`results/khirbet_orthophoto/`](results/khirbet_orthophoto/): notebook-reported statistics and an output manifest, not an independent validation dataset.
-- [`experiments/khirbet_orthophoto_experiment_log.md`](experiments/khirbet_orthophoto_experiment_log.md): threshold/resolution tests and an external registration test note.
 
 ## Data access
 
-Full GeoTIFF mosaics, model weights and large inference outputs are not committed to GitHub. See [data storage notes](data/orthophotos/README.md).
+Full GeoTIFF mosaics, model weights and large inference outputs are not committed to GitHub.
