@@ -19,11 +19,11 @@ This subproject investigates potential Olive Land Cover changes in an area near 
 
 ## Repository contents
 
-- : the submitted Colab notebook, **without rewritten analysis code**.
+- **Google Colab Notebook:** [Orthophotos Analysis – Wadi Sair](https://github.com/tommihab/Hebron-Analysis-Earth-Observation/blob/main/code/notebooks/orthophotos_analysis_wadi_Sair.ipynb) — Includes the workflow for orthophoto generation, mosaicking and subsequent analysis.
+
+- **QGIS Project:** [Orthophotos Analysis – Wadi Sair](https://github.com/tommihab/Hebron-Analysis-Earth-Observation/blob/main/gis_projects/qgis/orthophotos_analysis_wadi_sair.qgz) — Contains the QGIS project for geovisualising the classification and change detection results.
 
 ## Data access
-
-## Data
 
 The orthophotos and the RGB mosaics generated for the analysis are stored in Google Drive:
 
