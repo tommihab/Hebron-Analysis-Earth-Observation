@@ -1,6 +1,6 @@
 # Monitoring Land Cover Changes in the West Bank Using Optical Earth Observation and Machine Learning
 
-A HeoHumanitarian Action project from Ashley Zhang, Rocío López, Axcel Ishimwe and Tommi Haberstock
+A GeoHumanitarian Action project from Ashley Zhang, Rocío López, Axcel Ishimwe and Tommi Haberstock
 
 ## Project Overview
 
@@ -30,9 +30,15 @@ deep-learning-based building segmentation.
 
 [View methodology, workflow and documentation](README_ORTHOPHOTO_ANALYSIS.md)
 
+### 3. Analyses Ashley
+
+### 4. Analyses Rocio
+
+### 5. Analyses Axcel
+
 ## Data and Methods
 
-The project uses Sentinel-2 Level-2A imagery, Google Earth Engine, historical orthophotos from GeoMOLG, and Python-based geospatial and machine-learning workflows.
+View the specific README of each analysis for Data and Methods
 
 ## Repository Contents
 
@@ -42,3 +48,6 @@ The project uses Sentinel-2 Level-2A imagery, Google Earth Engine, historical or
 - `gis_projects/` — GIS project files
 - `docs/` — Methodology, interpretation, findings, and limitations
 - `presentation slides/` — Reports and presentations
+
+## License
+See LICENSE file.
