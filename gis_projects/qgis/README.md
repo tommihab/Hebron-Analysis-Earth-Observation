@@ -24,7 +24,7 @@ The project uses the following layers:
 
 All datasets required to reproduce the QGIS visualisation are available in Google Drive:
 
-**Download:** [Google Drive – Hebron Project Data](https://drive.google.com/drive/folders/1eF8lyTNn185a_0Wya1c3Gr-3KQGhlFh9?usp=drive_link)
+**Download:** [Google Drive – Olive Land Cover Classification Data](https://drive.google.com/drive/folders/1eF8lyTNn185a_0Wya1c3Gr-3KQGhlFh9?usp=drive_link)
 
 Download the four layers listed above before opening the QGIS project.
 
