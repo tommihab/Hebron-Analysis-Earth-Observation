@@ -1,10 +1,10 @@
 # High-resolution orthophoto analysis — Khirbet al-Fakheit (2021–2023)
 
-**Project:** Monitoring Land Cover Changes in the West Bank Using Optical Earth Observation and Machine Learning
+Project: Monitoring Land Cover Changes in the West Bank Using Optical Earth Observation and Machine Learning
 
 This subproject investigates potential building-footprint changes in a **1 × 1 km** area near Khirbet al-Fakheit (Masafer Yatta), using GeoMOLG RGB orthophotos for **2021, 2022, and 2023** and the HOTOSM DINOv3 Buildings Small model. It complements the regional Hebron Sentinel-2 / Dynamic World analysis.
 
-## At a glance
+## Summary
 
 | Item | Recorded in submitted notebook |
 |---|---|
@@ -22,12 +22,8 @@ This subproject investigates potential building-footprint changes in a **1 × 1 
 ## Repository contents
 
 - [`code/notebooks/khirbet_al_fakheit_orthophotos.ipynb`](code/notebooks/khirbet_al_fakheit_orthophotos.ipynb): the submitted Colab notebook, **without rewritten analysis code**; outputs were already cleared on upload.
-- [`code/notebooks/README.md`](code/notebooks/README.md): execution instructions, dependencies and a reproducibility warning.
-- [`code/orthophotos/inference_helpers.py`](code/orthophotos/inference_helpers.py): example missing helper functions, **not integrated into the original notebook; must be reviewed/tested**.
 - [`docs/methodology/khirbet_orthophoto_building_change.md`](docs/methodology/khirbet_orthophoto_building_change.md): method description.
 - [`docs/workflows/khirbet_orthophoto_workflow.md`](docs/workflows/khirbet_orthophoto_workflow.md): workflow and Mermaid flowchart.
-- [`metadata/khirbet_orthophoto_data_sources.csv`](metadata/khirbet_orthophoto_data_sources.csv): exact input service URLs and key metadata.
-- [`metadata/khirbet_orthophoto_processing.md`](metadata/khirbet_orthophoto_processing.md): processing parameters and provenance.
 - [`results/khirbet_orthophoto/`](results/khirbet_orthophoto/): notebook-reported statistics and an output manifest, not an independent validation dataset.
 
 ## Data access
