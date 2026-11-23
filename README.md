@@ -28,6 +28,7 @@ A notebook and associated datasets have been generated as part of the Olive Loss
 
 - **Code:** [Olive Land Cover Classification Notebook](code/notebooks/olive_land_cover_classification.ipynb)
 - **Data:** [Olive Land Cover Classification Datasets](https://github.com/tommihab/Hebron-Analysis-Earth-Observation/tree/main/data/olive_land_cover_classification)
+- **Geovisualization (QGIS Project):** [Olive Land-Cover Classification](https://github.com/tommihab/Hebron-Analysis-Earth-Observation/tree/main/gis_projects/qgis)
 
 ### 2. High-Resolution Orthophoto Analysis — Khirbet al-Fakheit
 
