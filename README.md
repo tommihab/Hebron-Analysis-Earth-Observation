@@ -22,7 +22,7 @@ The project focuses on the Hebron Governorate, including a detailed case study i
 Sentinel-2 and Dynamic World analysis of potential
 vegetation and built-up area changes (2020–2026).
 
-## Olive Land Cover Classification
+#### Olive Land Cover Classification
 
 A notebook and associated datasets have been generated as part of the Olive Loss classification analysis.
 
@@ -51,7 +51,7 @@ View the specific README of each analysis for Data and Methods
 
 ## Repository Contents
 
-- `data/` — Input datasets, reference data, and processing outputs
+- `data/` — Input datasets, reference data
 - `code/` — Analysis scripts and notebooks
 - `results/` — Maps, figures, tables, and validation outputs
 - `gis_projects/` — GIS project files
